@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "mgbaritonecrashguard",
+	"version": "${version}",
+	"name": "MGBaritoneCrashGuard",
+	"description": "Stops Baritone's non-daemon executor pools when the Minecraft client exits, so vanilla's post-main shutdown watchdog no longer writes a bogus 'Client shutdown from post-main' crash report and exits with code -8. Baritone is an explicit dependency. The mod never calls System.exit and never touches other mods' threads.",
+	"authors": [
+		"MineAgent"
+	],
+	"license": "LGPL-3.0-only",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.example.mgbcg.MGBaritoneCrashGuardMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"baritone": ">=1.20.0"
+	},
+	"contact": {
+		"homepage": "https://github.com/MineAgent/baritone-crash-guard",
+		"sources": "https://github.com/MineAgent/baritone-crash-guard"
+	}
+}
